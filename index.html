@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur Archimates, le forum pour les passionnés d'architecture.">
+    <meta name="description" content="Bienvenue sur Archimates, votre forum d'architecture préféré.">
     <title>Archimates - Forum Architecture</title>
     <style>
         * {
@@ -14,252 +14,138 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
             background-color: #f9f9f9;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px 40px;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            top: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            font-size: 24px;
             color: #333;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            padding: 10px 15px;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #ff6347;
-            color: #fff;
-        }
-
-        .cta-button {
-            background-color: #ff6347;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #e94e35;
-        }
-
-        .hero {
-            background: url('https://source.unsplash.com/1600x900/?architecture') no-repeat center center/cover;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-            position: relative;
-            margin-top: 80px;
+            height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-        }
-
-        .about, .features, .signup {
-            padding: 80px 20px;
-            background-color: #fff;
-            margin: 40px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            width: 90%;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+        .logo-container {
+            margin-top: 20px;
             text-align: center;
         }
 
-        .about img, .features img {
-            max-width: 100%;
-            border-radius: 15px;
+        .logo-container img {
+            max-width: 300px;
+            animation: fadeIn 1.5s ease;
         }
 
-        h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
+        .text-section {
+            margin: 40px 20px;
+            text-align: center;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1s;
         }
 
-        p {
+        .text-section p {
             font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        .features-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .feature-item {
-            width: 30%;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 15px;
+            color: #555;
             margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
         }
 
-        form input {
-            padding: 15px;
-            margin: 10px 0;
-            width: 100%;
-            max-width: 400px;
-            font-size: 1rem;
-            border-radius: 25px;
-            border: 1px solid #ddd;
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1.5s;
         }
 
-        form button {
-            padding: 15px 30px;
-            background: #ff6347;
+        .video-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .video-section iframe {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .discord-section {
+            margin: 40px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 2s;
+        }
+
+        .discord-section a {
+            display: inline-block;
+            background-color: #7289da;
             color: #fff;
-            border: none;
+            padding: 15px 30px;
             border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            text-decoration: none;
             transition: background-color 0.3s ease;
         }
 
-        form button:hover {
-            background-color: #e94e35;
+        .discord-section a:hover {
+            background-color: #5b6eae;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        footer p {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Archimates</h1>
-            </div>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#forum">Forum</a></li>
-                <li><a href="#signup">S'inscrire</a></li>
-            </ul>
-            <a href="#signup" class="cta-button">Rejoignez-nous</a>
-        </nav>
-    </header>
+    <div class="logo-container">
+        <img src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
+    </div>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <h2>Bienvenue sur Archimates</h2>
-            <p>Rejoignez la communauté dédiée à l'architecture.</p>
-            <a href="#signup" class="cta-button">Inscrivez-vous maintenant</a>
-        </div>
-    </section>
+    <div class="text-section">
+        <p>
+            Bienvenue sur Archimates, le forum dédié aux passionnés d'architecture. 
+            Découvrez des discussions enrichissantes, partagez vos projets et accédez à 
+            des ressources inspirantes pour améliorer vos compétences en architecture.
+        </p>
+    </div>
 
-    <section id="about" class="about">
-        <h2>À propos d'Archimates</h2>
-        <p>Archimates est un forum en ligne pour les architectes, les étudiants et les amateurs d'architecture. Échangez des idées, découvrez les dernières tendances et enrichissez vos connaissances.</p>
-        <img src="https://source.unsplash.com/1200x600/?modern-architecture" alt="Architecture moderne">
-    </section>
+    <div class="video-section">
+        <h2>Découvrez notre trailer</h2>
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-    <section id="features" class="features">
-        <h2>Fonctionnalités</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <h3>Discussions interactives</h3>
-                <p>Participez à des débats et discussions en temps réel avec des passionnés du monde entier.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Partage de projets</h3>
-                <p>Présentez vos projets et recevez des retours constructifs de la communauté.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Ressources pour apprendre</h3>
-                <p>Accédez à une vaste bibliothèque de ressources pour améliorer vos compétences architecturales.</p>
-            </div>
-        </div>
-    </section>
+    <div class="discord-section">
+        <a href="https://discord.com/invite/your-server-link" target="_blank">Rejoindre notre serveur Discord</a>
+    </div>
 
-    <section id="signup" class="signup">
-        <h2>Rejoignez la communauté Archimates</h2>
-        <p>Inscrivez-vous maintenant pour participer aux discussions et accéder à toutes les fonctionnalités.</p>
-        <form action="#">
-            <input type="text" placeholder="Votre nom" required>
-            <input type="email" placeholder="Votre email" required>
-            <button type="submit">S'inscrire</button>
-        </form>
-    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Animation d'apparition du contenu
+            const textSection = document.querySelector('.text-section');
+            const videoSection = document.querySelector('.video-section');
+            const discordSection = document.querySelector('.discord-section');
 
-    <footer>
-        <p>&copy; 2024 Archimates. Tous droits réservés.</p>
-    </footer>
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+
+                if (scrollPosition > 50) {
+                    textSection.style.opacity = 1;
+                    videoSection.style.opacity = 1;
+                    discordSection.style.opacity = 1;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
