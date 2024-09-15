@@ -24,22 +24,27 @@
             overflow-x: hidden;
         }
 
+        /* Conteneur du logo centré */
         .logo-container {
-            margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            animation: fadeIn 1.5s ease forwards;
         }
 
         .logo-container img {
-            max-width: 300px;
-            animation: fadeIn 1.5s ease;
+            max-width: 400px;
         }
 
+        /* Section texte sous le logo */
         .text-section {
-            margin: 40px 20px;
+            margin-top: 30px;
             text-align: center;
             max-width: 800px;
             opacity: 0;
-            animation: fadeIn 2s ease forwards 1s;
+            animation: fadeInText 1.5s ease forwards 1s;
         }
 
         .text-section p {
@@ -49,11 +54,12 @@
             line-height: 1.6;
         }
 
+        /* Section vidéo */
         .video-section {
-            margin: 40px 0;
+            margin-top: 40px;
             text-align: center;
             opacity: 0;
-            animation: fadeIn 2s ease forwards 1.5s;
+            animation: fadeIn 1.5s ease forwards 2s;
         }
 
         .video-section h2 {
@@ -69,11 +75,12 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        /* Section Discord */
         .discord-section {
-            margin: 40px 0;
+            margin-top: 40px;
             text-align: center;
             opacity: 0;
-            animation: fadeIn 2s ease forwards 2s;
+            animation: fadeIn 1.5s ease forwards 2.5s;
         }
 
         .discord-section a {
@@ -103,14 +110,26 @@
             }
         }
 
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Logo centré -->
     <div class="logo-container">
         <img src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
     </div>
 
+    <!-- Texte sous le logo -->
     <div class="text-section">
         <p>
             Bienvenue sur Archimates, le forum dédié aux passionnés d'architecture. 
@@ -119,22 +138,25 @@
         </p>
     </div>
 
+    <!-- Section vidéo -->
     <div class="video-section">
         <h2>Découvrez notre trailer</h2>
-        <iframe src="https://www.youtube.com/watch?v=rPtMaptcf3k&t=334s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
+    <!-- Lien Discord -->
     <div class="discord-section">
         <a href="https://discord.com/invite/your-server-link" target="_blank">Rejoindre notre serveur Discord</a>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Animation d'apparition du contenu
+            // Animations d'apparition
             const textSection = document.querySelector('.text-section');
             const videoSection = document.querySelector('.video-section');
             const discordSection = document.querySelector('.discord-section');
 
+            // Activer les animations lorsque l'utilisateur arrive sur la page
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.scrollY;
 
