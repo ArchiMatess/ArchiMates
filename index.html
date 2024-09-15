@@ -19,28 +19,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             flex-direction: column;
             overflow-x: hidden;
         }
 
-        /* Conteneur du logo centré */
+        /* Conteneur du logo en haut de la page */
         .logo-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
             text-align: center;
-            animation: fadeIn 1.5s ease forwards;
+            margin-top: 20px;
+            max-height: 40vh; /* S'assure que le logo ne dépasse pas 40% de la hauteur de la page */
         }
 
         .logo-container img {
-            max-width: 400px;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%; /* Pour s'assurer que le logo ne dépasse pas la hauteur maximale fixée */
+            animation: fadeIn 1.5s ease forwards;
         }
 
         /* Section texte sous le logo */
         .text-section {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             max-width: 800px;
             opacity: 0;
@@ -124,7 +124,7 @@
 </head>
 <body>
 
-    <!-- Logo centré -->
+    <!-- Logo en haut de la page, bien cadré -->
     <div class="logo-container">
         <img src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
     </div>
