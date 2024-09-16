@@ -13,79 +13,108 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f9f9f9;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
-
-        /* Conteneur du logo en haut de la page */
-        .logo-container {
-            width: 100%;
-            text-align: left;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .logo-container img {
-            width: 150px; /* Taille du logo */
-            height: auto;
-        }
-
-        /* Section texte sous le logo */
-        .text-section {
-            margin-top: 100px; /* Ajout d'espace sous le logo */
-            text-align: center;
-            max-width: 800px;
-            opacity: 0;
-            animation: fadeInText 1.5s ease forwards 1s;
-        }
-
-        .text-section p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
             line-height: 1.6;
-        }
-
-        /* Section vidéo */
-        .video-section {
-            margin-top: 40px;
             text-align: center;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards 2s;
         }
 
-        .video-section h2 {
+        /* Section logo et présentation */
+        header {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Section Nos forums */
+        .forum-section {
+            background-color: #fff;
+            padding: 40px 20px;
+        }
+
+        .forum-section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
 
-        .video-section iframe {
+        .forum-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .forum-card {
+            background-color: #f1f1f1;
+            width: 180px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .forum-card img {
+            max-width: 100%;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .forum-card h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .forum-card p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Section trailer */
+        .trailer-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .trailer-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .trailer-section iframe {
             width: 80%;
             max-width: 800px;
             height: 450px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Section Discord */
-        .discord-section {
-            margin-top: 40px;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards 2.5s;
+        /* Section rejoindre le forum */
+        .join-section {
+            background-color: #fff;
+            padding: 40px 20px;
         }
 
-        .discord-section a {
+        .join-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .join-section a {
             display: inline-block;
-            background-color: #7289da;
+            background-color: #ff6347;
             color: #fff;
             padding: 15px 30px;
             border-radius: 25px;
@@ -94,80 +123,63 @@
             transition: background-color 0.3s ease;
         }
 
-        .discord-section a:hover {
-            background-color: #5b6eae;
+        .join-section a:hover {
+            background-color: #e94e35;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Logo en haut à gauche, petit -->
-    <div class="logo-container">
-        <img src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
-    </div>
+    <!-- En-tête avec logo et présentation -->
+    <header>
+        <img class="logo" src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
+        <p class="intro-text">Bienvenue sur Archimates, le forum dédié aux passionnés d'architecture. Découvrez et partagez vos projets et idées.</p>
+    </header>
 
-    <!-- Texte sous le logo -->
-    <div class="text-section">
-        <p>
-            Bienvenue sur Archimates, le forum dédié aux passionnés d'architecture. 
-            Découvrez des discussions enrichissantes, partagez vos projets et accédez à 
-            des ressources inspirantes pour améliorer vos compétences en architecture.
-        </p>
-    </div>
+    <!-- Section Nos forums -->
+    <section class="forum-section">
+        <h2>Nos forums</h2>
+        <div class="forum-cards">
+            <div class="forum-card">
+                <img src="https://via.placeholder.com/100" alt="Forum Icon 1">
+                <h3>Architecture Moderne</h3>
+                <p>Discussions sur les tendances modernes en architecture.</p>
+            </div>
+            <div class="forum-card">
+                <img src="https://via.placeholder.com/100" alt="Forum Icon 2">
+                <h3>Projets Résidentiels</h3>
+                <p>Partagez et explorez des projets résidentiels.</p>
+            </div>
+            <div class="forum-card">
+                <img src="https://via.placeholder.com/100" alt="Forum Icon 3">
+                <h3>Design Intérieur</h3>
+                <p>Découvrez des inspirations pour le design intérieur.</p>
+            </div>
+            <div class="forum-card">
+                <img src="https://via.placeholder.com/100" alt="Forum Icon 4">
+                <h3>Éco-Architecture</h3>
+                <p>Discussions autour de l'architecture durable.</p>
+            </div>
+            <div class="forum-card">
+                <img src="https://via.placeholder.com/100" alt="Forum Icon 5">
+                <h3>Architecture Classique</h3>
+                <p>Explorez l'histoire et l'influence de l'architecture classique.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Section vidéo -->
-    <div class="video-section">
+    <!-- Section Trailer -->
+    <section class="trailer-section">
         <h2>Découvrez notre trailer</h2>
         <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    </section>
 
-    <!-- Lien Discord -->
-    <div class="discord-section">
-        <a href="https://discord.com/invite/your-server-link" target="_blank">Rejoindre notre serveur Discord</a>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Animations d'apparition
-            const textSection = document.querySelector('.text-section');
-            const videoSection = document.querySelector('.video-section');
-            const discordSection = document.querySelector('.discord-section');
-
-            // Activer les animations lorsque l'utilisateur arrive sur la page
-            window.addEventListener('scroll', function() {
-                const scrollPosition = window.scrollY;
-
-                if (scrollPosition > 50) {
-                    textSection.style.opacity = 1;
-                    videoSection.style.opacity = 1;
-                    discordSection.style.opacity = 1;
-                }
-            });
-        });
-    </script>
+    <!-- Section Rejoindre le forum -->
+    <section class="join-section">
+        <h2>Rejoignez notre communauté</h2>
+        <a href="https://discord.com/invite/your-server-link" target="_blank">Rejoindre le forum</a>
+    </section>
 
 </body>
 </html>
