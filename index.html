@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur Archimates, votre forum d'architecture préféré.">
-    <title>Archimates - Forum Architecture</title>
+    <meta name="description" content="Découvrez Archimates, la plateforme d'architecture pour partager vos projets et trouver des inspirations.">
+    <title>Archimates - Plateforme d'architecture</title>
     <style>
         * {
             margin: 0;
@@ -14,18 +14,19 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
         }
 
         /* En-tête */
         header {
-            background-color: white;
-            padding: 20px;
+            background-color: #fff;
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #ddd;
         }
 
         .logo {
@@ -35,16 +36,22 @@
         nav ul {
             list-style: none;
             display: flex;
+            gap: 20px;
         }
 
         nav ul li {
-            margin-left: 20px;
+            display: inline;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
         }
 
         .connexion-btn {
@@ -71,16 +78,19 @@
         .hero h1 {
             font-size: 3rem;
             color: #333;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            color: #666;
-            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
         }
 
         .cta-buttons {
-            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .cta-buttons a {
@@ -91,7 +101,6 @@
             border-radius: 25px;
             text-decoration: none;
             font-size: 1.2rem;
-            margin-right: 10px;
             transition: background-color 0.3s;
         }
 
@@ -105,11 +114,16 @@
             font-size: 1rem;
         }
 
-        /* Section vidéo */
+        /* Section Vidéo */
         .video-section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             background-color: #fff;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .video-section iframe {
@@ -120,9 +134,9 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Statistiques */
+        /* Section Statistiques */
         .stats-section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             background-color: #f5f7fa;
         }
@@ -136,7 +150,7 @@
 
         .stat-box {
             background-color: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             width: 200px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -172,18 +186,18 @@
 
     <!-- Section Hero -->
     <section class="hero">
-        <h1>L'architecture accessible à tous</h1>
-        <p>Partagez et découvrez des projets d'architecture, échangez des idées et améliorez vos compétences.</p>
+        <h1>Découvrez l'architecture avec Archimates</h1>
+        <p>Partagez et découvrez des projets d'architecture, échangez des idées et inspirez-vous pour vos futures créations.</p>
         <div class="cta-buttons">
             <a href="#">Commencer maintenant</a>
-            <a href="#">Appel de découverte</a>
+            <a href="#">En savoir plus</a>
         </div>
-        <p class="hero-stats">Déjà plus de 320 000 membres actifs !</p>
+        <p class="hero-stats">Rejoignez plus de 100 000 passionnés de l'architecture.</p>
     </section>
 
     <!-- Section vidéo -->
     <section class="video-section">
-        <h2>Découvrez notre vidéo</h2>
+        <h2>Présentation en vidéo</h2>
         <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
 
