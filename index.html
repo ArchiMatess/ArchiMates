@@ -17,83 +17,102 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
-            text-align: center;
         }
 
-        /* Section logo et présentation */
+        /* En-tête */
         header {
-            margin-top: 20px;
+            background-color: white;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            max-width: 200px;
-            margin-bottom: 10px;
+            max-width: 150px;
         }
 
-        .intro-text {
-            font-size: 1.5rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        /* Section Nos services */
-        .services-section {
-            background-color: #fff;
-            padding: 40px 20px;
-        }
-
-        .services-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .service-cards {
+        nav ul {
+            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
         }
 
-        .service-card {
-            background-color: #f1f1f1;
-            width: 180px;
-            padding: 20px;
-            border-radius: 10px;
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .connexion-btn {
+            background-color: #ff6347;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .connexion-btn:hover {
+            background-color: #e94e35;
+        }
+
+        /* Section Hero */
+        .hero {
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 100px 20px;
+            background-color: #f5f7fa;
         }
 
-        .service-card img {
-            max-width: 100%;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
+        .hero h1 {
+            font-size: 3rem;
             color: #333;
         }
 
-        .service-card p {
-            font-size: 1rem;
+        .hero p {
+            font-size: 1.5rem;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .cta-buttons {
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            background-color: #ff6347;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #e94e35;
+        }
+
+        .hero-stats {
+            margin-top: 20px;
             color: #777;
+            font-size: 1rem;
         }
 
-        /* Section trailer */
-        .trailer-section {
+        /* Section vidéo */
+        .video-section {
             padding: 40px 20px;
-            background-color: #f9f9f9;
+            text-align: center;
+            background-color: #fff;
         }
 
-        .trailer-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .trailer-section iframe {
+        .video-section iframe {
             width: 80%;
             max-width: 800px;
             height: 450px;
@@ -101,94 +120,90 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Section rejoindre le forum */
-        .join-section {
-            background-color: #fff;
+        /* Statistiques */
+        .stats-section {
             padding: 40px 20px;
+            text-align: center;
+            background-color: #f5f7fa;
         }
 
-        .join-section h2 {
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-box h3 {
             font-size: 2rem;
-            margin-bottom: 20px;
+            color: #333;
         }
 
-        .join-section a {
-            display: inline-block;
-            background-color: #ff6347;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+        .stat-box p {
+            font-size: 1rem;
+            color: #666;
         }
-
-        .join-section a:hover {
-            background-color: #e94e35;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- En-tête avec logo et présentation -->
+    <!-- En-tête -->
     <header>
         <img class="logo" src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
-        <p class="intro-text">Bienvenue sur Archimates, le forum dédié aux passionnés d'architecture. Découvrez et partagez vos projets et idées.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Investir</a></li>
+                <li><a href="#">Se financer</a></li>
+                <li><a href="#">Qui sommes nous</a></li>
+                <li><a href="#">S'informer</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="connexion-btn">Connexion</a>
     </header>
 
-    <!-- Section Nos services -->
-    <section class="services-section">
-        <h2>Nos services</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 1">
-                <h3>Discuter et partager son expérience</h3>
-                <p>Partagez vos idées et découvrez les expériences d'autres architectes.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 2">
-                <h3>La Culture & L'inspiration</h3>
-                <p>Trouvez de l'inspiration architectural à travers des architectes, des monuments, des podcasts et des livres.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 3">
-                <h3>Matériaux pour les études d'architecture</h3>
-                <p>Un accès à une vaste bibliothèque de ressources pour les matériaux de maquette, de dessin, ou les matériaux numérique au meilleur prix. </p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 4">
-                <h3>Achat & vente de matériel d'architecture</h3>
-                <p>Market place entre élèves pour acheter et vendre du matériel d'architecture.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 5">
-                <h3>L'intelligence artificielle sur l'architecture</h3>
-                <p>Découvrez comment l'IA transforme l'architecture.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 6">
-                <h3>Infos sur les écoles d'architecture</h3>
-                <p>Renseignez-vous sur les meilleures écoles d'architecture.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/100" alt="Service Icon 7">
-                <h3>Infos sur les logiciels d'architecture</h3>
-                <p>Découvrez des informations détaillés, des tutos, et des discussions enrichissantes sur les logiciels d'architecture.</p>
-            </div>
+    <!-- Section Hero -->
+    <section class="hero">
+        <h1>L'architecture accessible à tous</h1>
+        <p>Partagez et découvrez des projets d'architecture, échangez des idées et améliorez vos compétences.</p>
+        <div class="cta-buttons">
+            <a href="#">Commencer maintenant</a>
+            <a href="#">Appel de découverte</a>
         </div>
+        <p class="hero-stats">Déjà plus de 320 000 membres actifs !</p>
     </section>
 
-    <!-- Section Trailer -->
-    <section class="trailer-section">
-        <h2>Découvrez notre trailer</h2>
+    <!-- Section vidéo -->
+    <section class="video-section">
+        <h2>Découvrez notre vidéo</h2>
         <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
 
-    <!-- Section Rejoindre le forum -->
-    <section class="join-section">
-        <h2>Rejoignez notre communauté</h2>
-        <a href="https://discord.com/invite/your-server-link" target="_blank">Rejoindre le forum</a>
+    <!-- Section Statistiques -->
+    <section class="stats-section">
+        <h2>Statistiques clés</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <h3>82M€</h3>
+                <p>Montant financé</p>
+            </div>
+            <div class="stat-box">
+                <h3>79</h3>
+                <p>Projets complétés</p>
+            </div>
+            <div class="stat-box">
+                <h3>+320k</h3>
+                <p>Membres actifs</p>
+            </div>
+        </div>
     </section>
 
 </body>
