@@ -1,289 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Archimates, votre plateforme pour explorer et partager des projets architecturaux.">
-    <title>Archimates - Landing Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* En-tête */
-        header {
-            background-color: white;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            max-width: 150px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff6347;
-        }
-
-        .connexion-btn {
-            background-color: #ff6347;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        .connexion-btn:hover {
-            background-color: #e94e35;
-        }
-
-        /* Section Hero */
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background-color: #f5f7fa;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .hero a {
-            background-color: #ff6347;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-
-        .hero a:hover {
-            background-color: #e94e35;
-        }
-
-        /* Section Services */
-        .services-section {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .services-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .service-card {
-            background-color: #f1f1f1;
-            width: 250px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card img {
-            width: 60px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        /* Section Vidéo */
-        .video-section {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #f5f7fa;
-        }
-
-        .video-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .video-section iframe {
-            width: 80%;
-            max-width: 800px;
-            height: 450px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section Témoignages */
-        .testimonial-section {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .testimonial-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .testimonials {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .testimonial {
-            background-color: #f1f1f1;
-            width: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .testimonial img {
-            width: 60px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .testimonial h4 {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .testimonial p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        /* Section CTA (Call to Action) */
-        .cta-section {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #ff6347;
-            color: white;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section a {
-            background-color: white;
-            color: #ff6347;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-
-        .cta-section a:hover {
-            background-color: #e94e35;
-            color: white;
-        }
-    </style>
+    <title>BRICKS.co - Investissement Immobilier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
 
-    <!-- En-tête -->
-    <header>
-        <img class="logo" src="https://i.imgur.com/98HGmCe.png" alt="Logo Archimates">
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#" class="connexion-btn">Connexion</a>
+<body class="font-[Poppins] bg-white text-gray-800">
+    <!-- Header -->
+    <header class="flex justify-between items-center py-4 px-8 bg-white shadow-md">
+        <div class="flex items-center space-x-4">
+            <img src="https://placehold.co/120x40" alt="BRICKS.co Logo" class="h-8">
+            <nav class="space-x-8">
+                <a href="#" class="text-gray-600 hover:text-orange-500 font-semibold">Investir</a>
+                <a href="#" class="text-gray-600 hover:text-orange-500 font-semibold">Se financer</a>
+                <a href="#" class="text-gray-600 hover:text-orange-500 font-semibold">Qui sommes nous</a>
+                <a href="#" class="text-gray-600 hover:text-orange-500 font-semibold">S'informer</a>
+            </nav>
+        </div>
+        <button class="bg-orange-500 text-white py-2 px-6 rounded-full font-semibold">Connexion</button>
     </header>
 
-    <!-- Section Hero -->
-    <section class="hero">
-        <h1>Découvrez l'architecture avec Archimates</h1>
-        <p>Rejoignez notre communauté et explorez des projets d'architecture passionnants.</p>
-        <a href="#">Rejoindre maintenant</a>
-    </section>
+    <!-- Main Hero Section -->
+    <section class="text-center py-16 px-8 bg-white">
+        <h1 class="text-5xl font-bold text-gray-900 leading-tight">L'investissement immobilier dès 10€</h1>
+        <p class="text-lg text-gray-600 mt-4">Investissez dans des projets immobiliers dès 10 euros via des obligations et recevez des revenus tous les mois</p>
+        <div class="mt-6 space-x-4">
+            <button class="bg-orange-500 text-white py-3 px-8 rounded-full font-semibold">Investir dès maintenant</button>
+            <button class="bg-white border border-orange-500 text-orange-500 py-3 px-8 rounded-full font-semibold">Appel de découverte</button>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">Investir comporte des risques de perte en capital et d'illiquidité</p>
 
-    <!-- Section Services -->
-    <section class="services-section">
-        <h2>Nos Services</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <img src="https://via.placeholder.com/60" alt="Service 1">
-                <h3>Discuter et Partager</h3>
-                <p>Échangez des idées avec d'autres professionnels de l'architecture.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/60" alt="Service 2">
-                <h3>La Culture & L'inspiration</h3>
-                <p>Trouvez de l'inspiration dans la culture architecturale mondiale.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/60" alt="Service 3">
-                <h3>Ressources Matérielles</h3>
-                <p>Accédez à des outils et matériaux pour vos études en architecture.</p>
+        <div class="mt-8">
+            <p class="text-gray-700 font-semibold">320 000 membres ont déjà rejoint Bricks</p>
+            <div class="flex justify-center items-center space-x-2 text-green-600 mt-2">
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star-half-alt"></span>
+                <p class="ml-2 text-sm text-gray-600">Excellent 2,432 avis sur <span class="font-bold">Trustpilot</span></p>
             </div>
         </div>
     </section>
 
-    <!-- Section Vidéo -->
-    <section class="video-section">
-        <h2>Découvrez notre vidéo
+    <!-- Partner Logos -->
+    <section class="flex justify-center space-x-4 py-8 bg-white">
+        <img src="https://placehold.co/120x40" alt="Forbes Logo" class="h-8">
+        <img src="https://placehold.co/120x40" alt="Challenge Logo" class="h-8">
+        <img src="https://placehold.co/120x40" alt="Les Echos Logo" class="h-8">
+        <img src="https://placehold.co/120x40" alt="Le Parisien Logo" class="h-8">
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 px-8 text-center bg-gray-100">
+        <div class="max-w-screen-md mx-auto">
+            <h2 class="text-orange-500 text-sm font-bold uppercase">Spécialiste du Crowdfunding Immobilier</h2>
+            <h3 class="text-3xl font-bold text-gray-900 mt-4">Démocratiser l’accès à l’investissement immobilier</h3>
+            <div class="mt-8">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/placeholder_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 px-8 text-center bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-lg mx-auto">
+            <div>
+                <p class="text-4xl font-bold text-gray-900">82M€</p>
+                <p class="text-lg text-gray-600 mt-2">Montant financé par les investisseurs</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold text-gray-900">79</p>
+                <p class="text-lg text-gray-600 mt-2">Projets déjà financés sur notre plateforme</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold text-gray-900">+320k</p>
+                <p class="text-lg text-gray-600 mt-2">Membres ont accès à l’immobilier avec Bricks</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-8 bg-white text-center text-gray-600">
+        <p>Bricks.co est une plateforme participative agréée par l’Autorité des Marchés Financiers...</p>
+    </footer>
+
+</body>
+
+</html>
