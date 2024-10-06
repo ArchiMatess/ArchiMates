@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: #FEFCFC; /* Setting the background color to the requested color */
+            background-color: #FEFCFC; /* Background color */
+        }
+        .strong-blue {
+            color: #001F3F; /* Stronger dark blue for better visibility */
+        }
+        .strong-blue-bg {
+            background-color: #001F3F; /* Stronger dark blue background for elements */
+        }
+        .strong-blue-border {
+            border-color: #001F3F; /* Stronger dark blue border */
         }
     </style>
 </head>
@@ -19,15 +28,15 @@
     <!-- Header -->
     <header class="flex justify-between items-center py-4 px-8 bg-[#FEFCFC] shadow-md">
         <div class="flex items-center space-x-4">
-            <img src="https://i.imgur.com/98HGmCe.png" alt="Architecte.co Logo" class="h-20"> <!-- Increased logo size -->
+            <img src="https://i.imgur.com/98HGmCe.png" alt="Architecte.co Logo" class="h-28"> <!-- Made the logo bigger -->
             <nav class="space-x-8">
-                <a href="#" class="text-gray-600 hover:text-[#002B5B] font-semibold">Nos Projets</a>
-                <a href="#" class="text-gray-600 hover:text-[#002B5B] font-semibold">Nos Services</a>
-                <a href="#" class="text-gray-600 hover:text-[#002B5B] font-semibold">À propos</a>
-                <a href="#" class="text-gray-600 hover:text-[#002B5B] font-semibold">Contact</a>
+                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold">Nos Projets</a>
+                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold">Nos Services</a>
+                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold">À propos</a>
+                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold">Contact</a>
             </nav>
         </div>
-        <button class="bg-[#002B5B] text-white py-2 px-6 rounded-full font-semibold">Rejoindre Discord</button>
+        <button class="bg-[#001F3F] text-white py-2 px-6 rounded-full font-semibold">Rejoindre Discord</button>
     </header>
 
     <!-- Main Hero Section -->
@@ -38,8 +47,8 @@
                 <h1 class="text-4xl font-bold text-gray-900 leading-tight">Construisons ensemble des espaces durables</h1>
                 <p class="text-lg text-gray-600 mt-4">Découvrez nos projets architecturaux innovants, collaborons pour façonner des villes et des espaces inspirants.</p>
                 <div class="mt-4 space-x-2"> <!-- Reduced margin and space between buttons -->
-                    <button class="bg-[#002B5B] text-white py-3 px-6 rounded-full font-semibold">Nos Projets</button>
-                    <button class="bg-transparent border border-[#002B5B] text-[#002B5B] py-3 px-6 rounded-full font-semibold">Rejoignez notre Discord</button>
+                    <button class="bg-[#001F3F] text-white py-3 px-6 rounded-full font-semibold">Nos Projets</button>
+                    <button class="bg-transparent strong-blue-border border py-3 px-6 rounded-full font-semibold">Rejoignez notre Discord</button>
                 </div>
                 <p class="text-xs text-gray-500 mt-4">Explorez notre communauté architecturale pour en apprendre plus et collaborer.</p>
 
@@ -74,7 +83,7 @@
     <!-- Video Section -->
     <section class="py-12 px-8 text-center bg-gray-100"> <!-- Adjusted background and padding -->
         <div class="max-w-screen-md mx-auto">
-            <h2 class="text-[#002B5B] text-sm font-bold uppercase">Spécialistes en architecture durable</h2>
+            <h2 class="text-[#001F3F] text-sm font-bold uppercase">Spécialistes en architecture durable</h2>
             <h3 class="text-3xl font-bold text-gray-900 mt-4">Découvrez nos projets architecturaux récents</h3>
             <div class="mt-8">
                 <iframe width="100%" height="400" src="https://www.youtube.com/embed/placeholder_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -103,7 +112,7 @@
     <!-- Architecture Benefits Section -->
     <section class="py-12 px-8 bg-[#0D2438] text-white"> <!-- Reduced padding -->
         <div class="container mx-auto">
-            <h2 class="text-[#002B5B] text-sm font-bold uppercase">Pourquoi nous choisir</h2>
+            <h2 class="text-[#001F3F] text-sm font-bold uppercase">Pourquoi nous choisir</h2>
             <h3 class="text-3xl font-bold mt-4">Des solutions architecturales innovantes</h3>
             <p class="text-lg text-gray-300 mt-4">Nous proposons des solutions architecturales modernes et durables pour tous types de projets, des maisons aux grands complexes urbains.</p>
             <p class="text-lg text-gray-300 mt-1">Découvrez les raisons pour lesquelles nos clients nous font confiance :</p>
@@ -111,33 +120,33 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <!-- Card 1 -->
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg">
-                    <span class="fas fa-ruler-combined text-[#002B5B] text-2xl"></span>
+                    <span class="fas fa-ruler-combined strong-blue text-2xl"></span> <!-- Stronger blue for icons -->
                     <h4 class="text-xl font-bold mt-4">Design sur mesure</h4>
                     <p class="text-gray-300 mt-2">Des solutions personnalisées et adaptées à vos besoins, conçues pour s'intégrer parfaitement dans leur environnement.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg">
-                    <span class="fas fa-city text-[#002B5B] text-2xl"></span>
+                    <span class="fas fa-city strong-blue text-2xl"></span> <!-- Stronger blue for icons -->
                     <h4 class="text-xl font-bold mt-4">Expertise urbaine</h4>
                     <p class="text-gray-300 mt-2">Nous maîtrisons la planification urbaine et les projets de grande envergure pour transformer vos idées en réalité.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg">
-                    <span class="fas fa-solar-panel text-[#002B5B] text-2xl"></span>
+                    <span class="fas fa-solar-panel strong-blue text-2xl"></span> <!-- Stronger blue for icons -->
                     <h4 class="text-xl font-bold mt-4">Écologie et durabilité</h4>
                     <p class="text-gray-300 mt-2">Tous nos projets sont pensés pour minimiser leur impact environnemental et favoriser un avenir durable.</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg">
-                    <span class="fas fa-handshake text-[#002B5B] text-2xl"></span>
+                    <span class="fas fa-handshake strong-blue text-2xl"></span> <!-- Stronger blue for icons -->
                     <h4 class="text-xl font-bold mt-4">Collaboration active</h4>
                     <p class="text-gray-300 mt-2">Nous travaillons main dans la main avec nos clients pour garantir que chaque projet répond à leurs attentes.</p>
                 </div>
             </div>
 
             <div class="flex space-x-4 mt-8">
-                <button class="bg-[#002B5B] text-white py-3 px-8 rounded-full font-semibold">En savoir plus</button>
-                <a href="https://discord.com/invite/example" target="_blank" class="bg-transparent border border-[#002B5B] text-[#002B5B] py-3 px-8 rounded-full font-semibold">Rejoindre notre Discord</a>
+                <button class="bg-[#001F3F] text-white py-3 px-8 rounded-full font-semibold">En savoir plus</button>
+                <a href="https://discord.com/invite/example" target="_blank" class="bg-transparent border strong-blue-border text-[#001F3F] py-3 px-8 rounded-full font-semibold">Rejoindre notre Discord</a>
             </div>
         </div>
     </section>
