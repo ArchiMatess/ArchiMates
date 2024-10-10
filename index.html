@@ -13,6 +13,7 @@
     <style>
         body {
             background-color: #FEFCFC;
+            scroll-behavior: smooth;
         }
 
         .strong-blue {
@@ -36,23 +37,6 @@
             animation: fadeInUp 1.5s ease-in-out;
         }
 
-        .hover-bounce {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hover-bounce:hover {
-            transform: scale(1.05);
-        }
-
-        .hover-zoom {
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .hover-zoom:hover {
-            transform: scale(1.1);
-        }
-
-        /* Keyframes for fade in */
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -65,105 +49,50 @@
             }
         }
 
-        /* Slider styles */
-        .slider-ctr {
-            width: 700px;
-            height: 440px;
-            margin: 0 auto;
-            box-sizing: border-box;
-            border: 10px solid white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px 3px rgba(0, 0, 0, .15), 0 5px 20px 3px rgba(0, 0, 0, .1);
-            position: relative;
-            background: #FEFCFC;
-        }
-
-        .slider-control {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            z-index: 99;
-        }
-
-        .control {
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            transition: .3s all ease;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .control.disabled {
-            pointer-events: none;
-            background: #ddd;
-        }
-
-        .control .icon {
-            pointer-events: none;
-            color: #001F3F;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            transition: none;
-            clip-path: inset(0 0 0 0);
-            opacity: 0;
-            z-index: 1;
-        }
-
-        .slide.text-on {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .carousel-title {
-            text-align: center;
-            font-size: 30px;
-            color: #001F3F;
-            margin-bottom: 10px;
-        }
-
-        .section-bg {
-            background-color: #FEFCFC;
-        }
-
-        /* Adjusting the logo and the image positioning */
-        .logo {
-            margin-top: 10px;
-        }
-
-        .hero-image {
-            margin-top: -60px;
-        }
-
-        /* Button design */
+        /* Hover and animation effects */
         .btn-large {
             padding: 20px 30px;
             font-size: 18px;
             border-radius: 6px;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
 
         .btn-large:hover {
             background-color: #001F3F;
             color: white;
+            transform: scale(1.05);
+        }
+
+        /* Animation for "Rejoindre le forum" */
+        .spaced-button {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            animation: buttonBounce 1s ease infinite alternate;
+        }
+
+        @keyframes buttonBounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Excluding specific buttons from animation */
+        nav a {
+            transition: none;
+        }
+
+        /* Hover bounce for the cases in 'Pourquoi rejoindre Archimates' */
+        .hover-bounce {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hover-bounce:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -171,15 +100,14 @@
 <body class="font-[Poppins] bg-[#FEFCFC] text-gray-800">
     <!-- Header -->
     <header class="flex justify-between items-center py-4 px-8 bg-[#FEFCFC] shadow-md fade-in-up">
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-8">
             <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
             <nav class="space-x-8">
-                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold transition-colors duration-300">À propos</a>
-                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold transition-colors duration-300">Nos Services</a>
-                <a href="#" class="text-gray-600 hover:text-[#001F3F] font-semibold transition-colors duration-300">Contact</a>
+                <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300">À propos</a>
+                <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300">Nos Services</a>
+                <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300">Contact</a>
             </nav>
         </div>
-        <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-3 px-8 rounded-full font-semibold btn-animated">Rejoindre le forum</a>
     </header>
 
     <!-- Main Hero Section -->
@@ -189,8 +117,8 @@
                 <h1 class="text-4xl font-bold text-gray-900 leading-tight fade-in-up">Archimates : Le forum pour les étudiants en architecture</h1>
                 <p class="text-lg text-gray-600 mt-4 fade-in-delayed">C'est un forum qui accompagne les étudiants et qui rassemble l’essentiel des ressources matériels et immatériels pour tes études d’architectures. 📚</p>
 
-                <div class="mt-10 space-x-2 fade-in-delayed">
-                    <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-4 px-10 rounded-full font-semibold btn-large btn-animated">Rejoindre le forum</a>
+                <div class="spaced-button fade-in-delayed">
+                    <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-4 px-10 rounded-full font-semibold btn-large">Rejoindre le forum</a>
                 </div>
 
                 <div class="mt-6 fade-in-delayed">
@@ -207,52 +135,13 @@
             </div>
 
             <div class="lg:w-1/2 mt-6 lg:mt-0 flex justify-center lg:justify-end">
-                <img src="https://i.imgur.com/GKUN8Jm.png" alt="Archimates App Preview" class="w-96 lg:w-2/3 hover-zoom hero-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- Slider Section -->
-    <section class="py-12 px-8 text-center bg-gray-100 fade-in-up section-bg">
-        <h2 class="carousel-title">Sky</h2>
-        <div class="slider-ctr">
-            <figure class="slide text-on">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img5.jpeg" alt="Sky">
-                <figcaption>
-                    <div class="author">Aleksandra</div>
-                </figcaption>
-            </figure>
-            <figure class="slide">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img1.jpeg" alt="River">
-                <figcaption>
-                    <div class="author">Ales Krivec</div>
-                </figcaption>
-            </figure>
-            <figure class="slide">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img4.jpeg" alt="Rain">
-                <figcaption>
-                    <div class="author">Wilson Lau</div>
-                </figcaption>
-            </figure>
-            <figure class="slide">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img2.jpeg" alt="Ocean">
-                <figcaption>
-                    <div class="author">Rosan Harmens</div>
-                </figcaption>
-            </figure>
-            <div class="slider-control">
-                <div class="control prev disabled">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="control next">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
+                <img src="https://i.imgur.com/7TcrQzN.png" alt="Archimates App Preview" class="w-96 lg:w-2/3 hover-zoom hero-image">
             </div>
         </div>
     </section>
 
     <!-- Video Section -->
-    <section class="py-12 px-8 text-center bg-[#FEFCFC] fade-in-up">
+    <section id="trailer-section" class="py-12 px-8 text-center bg-[#FEFCFC] fade-in-up">
         <div class="max-w-screen-md mx-auto">
             <h2 class="text-[#001F3F] text-sm font-bold uppercase">---</h2>
             <h3 class="text-3xl font-bold text-gray-900 mt-4">Découvrez notre trailer</h3>
@@ -281,7 +170,7 @@
     </section>
 
     <!-- Architecture Benefits Section -->
-    <section class="py-12 px-8 bg-[#0D2438] text-white fade-in-up">
+    <section id="services-section" class="py-12 px-8 bg-[#0D2438] text-white fade-in-up">
         <div class="container mx-auto">
             <h2 class="text-[#001F3F] text-sm font-bold uppercase">---</h2>
             <h3 class="text-3xl font-bold mt-4">Pourquoi rejoindre Archimates ?</h3>
@@ -289,25 +178,36 @@
             <p class="text-lg text-gray-300 mt-1">---</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce">
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
                     <span class="emoji">💬</span>
                     <h4 class="text-xl font-bold mt-4">Partage</h4>
                     <p class="text-gray-300 mt-2">Discute de tes expériences, demande conseil, partage tes projets et évolue avec des étudiants en architecture.</p>
                 </div>
-                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce">
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
                     <span class="emoji">🧠</span>
                     <h4 class="text-xl font-bold mt-4">Culture</h4>
                     <p class="text-gray-300 mt-2">Retrouve plus de 400 ressources culturelles et inspirations (podcasts, livres, architectes, oeuvres et monuments).</p>
                 </div>
-                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce">
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
                     <span class="emoji">🛠️</span>
                     <h4 class="text-xl font-bold mt-4">Matériaux</h4>
                     <p class="text-gray-300 mt-2">Accède à tous les matériaux pour les études d'architecture aux meilleurs prix.</p>
                 </div>
-                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce">
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
                     <span class="emoji">🤖</span>
                     <h4 class="text-xl font-bold mt-4">Intelligence artificielle</h4>
                     <p class="text-gray-300 mt-2">Être au courant de l’évolution de l’intelligence artificielle et de toutes ses innovations.</p>
+                </div>
+                <!-- Added two new sections -->
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
+                    <span class="emoji">💿</span>
+                    <h4 class="text-xl font-bold mt-4">Logiciel</h4>
+                    <p class="text-gray-300 mt-2">Guide complet sur tout les logiciels de conception architectural. Avec des tutos, des tips, des conseils d’anciens élèves et des accès aux licences gratuites pour les étudiants.</p>
+                </div>
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
+                    <span class="emoji">🛒</span>
+                    <h4 class="text-xl font-bold mt-4">Achat & Vente</h4>
+                    <p class="text-gray-300 mt-2">Acheté et vendre du matériel d’occasion des anciens étudiants sur notre market place intégrer. Un service économique et éco-responsable pour tous.</p>
                 </div>
             </div>
 
@@ -323,48 +223,22 @@
         <p>Archimates.fr © 2024. Tous droits réservés.</p>
     </footer>
 
-    <!-- JavaScript for the slider -->
+    <!-- Smooth scrolling JavaScript with offset for "À propos" -->
     <script>
-        var sliderControl = document.querySelector(".slider-control");
-        var slides = document.querySelectorAll(".slide");
-        var slideCurrent = 0;
-        var titles = ["Ulysse", "la", "grosse", "salope"];
-        var totalSlides = slides.length;
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const offset = targetId === '#trailer-section' ? 100 : 0;
+                const targetElement = document.querySelector(targetId);
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-        function showSlide(index) {
-            slides.forEach(function(slide, i) {
-                slide.classList.remove('text-on');
-                slide.style.opacity = '0';
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
             });
-            slides[index].classList.add('text-on');
-            slides[index].style.opacity = '1';
-            document.querySelector('.carousel-title').textContent = titles[index];
-        }
-
-        sliderControl.addEventListener("click", function(e) {
-            var target = e.target.closest('.control');
-            if (!target) return;
-
-            if (target.classList.contains('next') && slideCurrent < totalSlides - 1) {
-                slideCurrent++;
-                showSlide(slideCurrent);
-            }
-
-            if (target.classList.contains('prev') && slideCurrent > 0) {
-                slideCurrent--;
-                showSlide(slideCurrent);
-            }
-
-            updateControls();
         });
-
-        function updateControls() {
-            document.querySelector(".prev").classList.toggle("disabled", slideCurrent === 0);
-            document.querySelector(".next").classList.toggle("disabled", slideCurrent === totalSlides - 1);
-        }
-
-        showSlide(slideCurrent);
-        updateControls();
     </script>
 
 </body>
