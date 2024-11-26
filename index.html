@@ -104,21 +104,39 @@
         .fade-gradient {
             background: linear-gradient(180deg, #F3F1F1 0%, #FEFCFC 100%);
         }
+/* Tab bar couleur */
+    header {
+        background-color: #FEFCFC;
+    }
+
+    /* Style pour entourer les boutons d'un cercle */
+    .circle-button {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 2px solid #001F3F;
+        border-radius: 9999px; /* Cercle parfait */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .circle-button:hover {
+        background-color: #001F3F;
+        color: white;
+    }
     </style>
 </head>
 
 <body class="font-[Poppins] bg-[#FEFCFC] text-gray-800">
-    <!-- Header (Tab Bar) -->
-    <header class="flex justify-between items-center py-4 px-8 bg-gray-200 shadow-md fade-in-up">
-        <div class="flex items-center space-x-8">
-            <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
-            <nav class="space-x-8">
-                <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300">À propos</a>
-                <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300">Nos Services</a>
-                <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300">Contact</a>
-            </nav>
-        </div>
-    </header>
+<!-- Header (Tab Bar) -->
+<header class="flex justify-between items-center py-4 px-8 bg-[#F3F1F1] shadow-md fade-in-up">
+    <div class="flex items-center space-x-8">
+        <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
+        <nav class="space-x-8">
+            <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">À propos</a>
+            <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Nos Services</a>
+            <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
+        </nav>
+    </div>
+</header>
 
     <!-- Main Hero Section -->
     <section class="py-12 px-8 bg-[#FEFCFC] fade-in-up section-bg">
