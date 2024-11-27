@@ -273,20 +273,6 @@
                 }
             });
         });
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const offset = targetId === '#trailer-section' ? 100 : 0;
-                const targetElement = document.querySelector(targetId);
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
 
 </body>
