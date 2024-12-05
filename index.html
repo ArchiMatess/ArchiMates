@@ -131,13 +131,26 @@
 <header class="flex justify-between items-center py-4 px-8 bg-[#F3F1F1] shadow-md fade-in-up">
     <div class="flex items-center space-x-8">
         <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
-        <nav class="space-x-8">
-            <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">À propos</a>
-            <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Nos Services</a>
-            <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
+        <!-- Menu burger pour mobile -->
+        <button id="burger-menu" class="lg:hidden text-gray-800 focus:outline-none">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+        <nav id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6 lg:hidden">
+            <a href="#trailer-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">À propos</a>
+            <a href="#services-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Nos Services</a>
+            <a href="contact.html" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Contact</a>
+            <button id="close-menu" class="text-gray-800 focus:outline-none mt-4">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
         </nav>
     </div>
+    <nav class="hidden lg:flex space-x-8">
+        <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">À propos</a>
+        <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Nos Services</a>
+        <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
+    </nav>
 </header>
+
 
     <!-- Main Hero Section -->
     <section class="py-12 px-8 bg-[#FEFCFC] fade-in-up section-bg">
