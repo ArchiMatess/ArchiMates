@@ -105,6 +105,18 @@
         .fade-gradient {
             background: linear-gradient(180deg, #F3F1F1 0%, #FEFCFC 100%);
         }
+        /* Cacher le menu pour mobile par défaut */
+#mobile-menu {
+    display: none;
+}
+
+/* Afficher le menu burger sur mobile uniquement */
+@media (max-width: 1024px) {
+    #burger-menu {
+        display: block;
+    }
+}
+
 /* Tab bar couleur */
     header {
         background-color: #FEFCFC;
