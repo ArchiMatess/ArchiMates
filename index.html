@@ -273,6 +273,19 @@
 
     <!-- Smooth scrolling JavaScript with offset for "À propos" -->
     <script>
+       document.addEventListener("DOMContentLoaded", function() {
+        const burgerMenu = document.getElementById("burger-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        burgerMenu.addEventListener("click", function() {
+            mobileMenu.classList.remove("hidden");
+        });
+
+        closeMenu.addEventListener("click", function() {
+            mobileMenu.classList.add("hidden");
+        });
+    });
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
