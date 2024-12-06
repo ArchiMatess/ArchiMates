@@ -65,37 +65,6 @@
             transform: scale(1.05);
         }
 
-        /* Animation for "Rejoindre le forum" */
-        .spaced-button {
-            margin-top: 40px;
-            margin-bottom: 40px;
-            animation: buttonBounce 1s ease infinite alternate;
-        }
-
-        @keyframes buttonBounce {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Excluding specific buttons from animation */
-        nav a {
-            transition: none;
-        }
-
-        /* Hover bounce for the cases in 'Pourquoi rejoindre Archimates' */
-        .hover-bounce {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hover-bounce:hover {
-            transform: scale(1.05);
-        }
-
         /* Style for grayed background */
         .gray-bg {
             background-color: #F3F1F1;
@@ -106,22 +75,16 @@
             background: linear-gradient(180deg, #F3F1F1 0%, #FEFCFC 100%);
         }
 
-        /* Cacher le menu pour mobile par défaut */
+        /* Menu déroulant mobile caché par défaut */
         #mobile-menu {
             display: none;
         }
 
-        /* Afficher le menu burger sur mobile uniquement */
+        /* Menu burger visible uniquement sur mobile */
         @media (max-width: 1024px) {
             #burger-menu {
                 display: block;
                 margin-left: auto;
-            }
-        }
-
-        @media (min-width: 1025px) {
-            #burger-menu {
-                display: none;
             }
         }
 
@@ -142,6 +105,11 @@
         .circle-button:hover {
             background-color: #001F3F;
             color: white;
+        }
+
+        /* Style pour l'affichage du menu mobile lorsqu'il est ouvert */
+        .show {
+            display: flex !important;
         }
     </style>
 </head>
@@ -166,7 +134,7 @@
     </header>
 
     <!-- Menu déroulant mobile -->
-    <nav id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6 lg:hidden">
+    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6 lg:hidden">
         <a href="#trailer-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">À propos</a>
         <a href="#services-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Nos Services</a>
         <a href="contact.html" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Contact</a>
@@ -280,31 +248,11 @@
     <footer class="py-8 px-8 bg-[#FEFCFC] text-center text-gray-600 fade-in-up">
         <p>Archimates.fr © 2024. Tous droits réservés.</p>
     </footer>
-    <!-- Smooth scrolling JavaScript avec correction du menu burger -->
+
+
+    <!-- JavaScript pour le menu burger -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const burgerMenu = document.getElementById("burger-menu");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const closeMenu = document.getElementById("close-menu");
-
-            // Ouverture du menu mobile
-            burgerMenu.addEventListener("click", function () {
-                mobileMenu.classList.toggle("hidden");
-            });
-
-            // Fermeture du menu mobile
-            closeMenu.addEventListener("click", function () {
-                mobileMenu.classList.add("hidden");
-            });
-
-            // Option pour fermer le menu lorsqu'un lien est cliqué
-            mobileMenu.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", function () {
-                    mobileMenu.classList.add("hidden");
-                });
-            });
-        });
-         document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
 
@@ -325,7 +273,30 @@
                 }
             });
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerMenu = document.getElementById("burger-menu");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const closeMenu = document.getElementById("close-menu");
+
+            // Ouverture du menu mobile
+            burgerMenu.addEventListener("click", function () {
+                mobileMenu.classList.toggle("show");
+            });
+
+            // Fermeture du menu mobile
+            closeMenu.addEventListener("click", function () {
+                mobileMenu.classList.remove("show");
+            });
+
+            // Option pour fermer le menu lorsqu'un lien est cliqué
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("show");
+                });
+            });
+        });
     </script>
+
 </body>
 
 </html>
