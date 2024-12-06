@@ -34,6 +34,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 1rem;
         }
 
         /* Social Icon styles */
@@ -54,6 +55,7 @@
             font-size: 1.5rem;
             margin-top: 20px;
             transition: color 0.3s ease;
+            word-break: break-word;
         }
 
         .email-link:hover {
@@ -67,6 +69,20 @@
             padding: 1rem;
             margin-top: auto;
         }
+
+        /* Style pour entourer les boutons d'un cercle */
+        .circle-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 2px solid #001F3F;
+            border-radius: 9999px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .circle-button:hover {
+            background-color: #001F3F;
+            color: white;
+        }
     </style>
 </head>
 
@@ -77,16 +93,16 @@
         <div class="flex items-center space-x-8">
             <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
             <nav class="space-x-8">
-                <a href="index.html" class="text-gray-600 font-semibold transition-colors duration-300">Accueil</a>
+                <a href="index.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Accueil</a>
             </nav>
         </div>
     </header>
 
     <!-- Contact Section (Main content in the center) -->
-    <section class="main-content">
+    <section class="main-content max-w-screen-sm mx-auto px-4">
         <div>
-            <h2 class="text-3xl font-bold text-[#001F3F]">Retrouvez-nous sur les réseaux sociaux</h2>
-            <p class="text-lg text-gray-600 mt-4">Suivez-nous sur les plateformes sociales ou contactez-nous directement via notre e-mail.</p>
+            <h2 class="text-3xl font-bold text-[#001F3F] break-words">Retrouvez-nous sur les réseaux sociaux</h2>
+            <p class="text-lg text-gray-600 mt-4 break-words">Suivez-nous sur les plateformes sociales ou contactez-nous directement via notre e-mail.</p>
 
             <!-- Social Media Icons -->
             <div class="social-icons mt-8">
