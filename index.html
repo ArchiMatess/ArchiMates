@@ -162,30 +162,38 @@
         opacity: 1;
         transform: translateY(0);
     }
-       /* Définir l'animation de rebond */
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
+     /* Réduction du rebond du bouton "Rejoindre le forum" */
+    @keyframes subtleBounce {
+        0%, 100% {
             transform: translateY(0);
         }
-        40% {
-            transform: translateY(-10px);
-        }
-        60% {
-            transform: translateY(-5px);
+        50% {
+            transform: translateY(-3px); /* Mouvement léger vers le haut */
         }
     }
 
-    /* Appliquer l'animation au bouton */
     .btn-bounce {
-        display: inline-block;
-        animation: bounce 2s infinite; /* Animation de rebond toutes les 2 secondes */
-        transition: transform 0.3s ease; /* Transition pour un effet fluide */
+        animation: subtleBounce 3s infinite; /* Mouvement toutes les 3 secondes */
+        transition: transform 0.3s ease-in-out; /* Transition douce au survol */
     }
 
-    /* Au survol : arrêter le rebond et agrandir légèrement */
     .btn-bounce:hover {
         animation: none; /* Arrêter l'animation au survol */
-        transform: scale(1.1); /* Agrandir légèrement */
+        transform: scale(1.05); /* Agrandissement très léger */
+    }
+
+    /* Désactiver l'interaction sur le logo */
+    .logo {
+        pointer-events: none; /* Désactiver toute interaction */
+    }
+
+    /* Effet de zoom léger pour les boutons dans le screen */
+    .hover-zoom {
+        transition: transform 0.3s ease-in-out; /* Transition fluide */
+    }
+
+    .hover-zoom:hover {
+        transform: scale(1.05); /* Zoom subtil */
     }
     </style>
 </head>
