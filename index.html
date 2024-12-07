@@ -162,19 +162,19 @@
         opacity: 1;
         transform: translateY(0);
     }
-     /* Réduction du rebond du bouton "Rejoindre le forum" */
+    /* Animation légère pour le bouton "Rejoindre le forum" */
     @keyframes subtleBounce {
         0%, 100% {
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-3px); /* Mouvement léger vers le haut */
+            transform: translateY(-3px); /* Mouvement subtil vers le haut */
         }
     }
 
     .btn-bounce {
-        animation: subtleBounce 3s infinite; /* Mouvement toutes les 3 secondes */
-        transition: transform 0.3s ease-in-out; /* Transition douce au survol */
+        animation: subtleBounce 3s infinite; /* Rebond toutes les 3 secondes */
+        transition: transform 0.3s ease; /* Transition fluide au survol */
     }
 
     .btn-bounce:hover {
@@ -182,12 +182,18 @@
         transform: scale(1.05); /* Agrandissement très léger */
     }
 
-    /* Désactiver l'interaction sur le logo */
-    .logo {
-        pointer-events: none; /* Désactiver toute interaction */
+    /* Désactiver les animations des boutons en haut */
+    nav a {
+        transition: none !important; /* Supprime les transitions */
+        transform: none !important; /* Supprime tout mouvement */
     }
 
-    /* Effet de zoom léger pour les boutons dans le screen */
+    nav a:hover {
+        color: inherit; /* Aucun changement de couleur au survol */
+        transform: none; /* Aucun mouvement au survol */
+    }
+
+    /* Effet de zoom pour les cartes (dans le screen) */
     .hover-zoom {
         transition: transform 0.3s ease-in-out; /* Transition fluide */
     }
@@ -205,10 +211,10 @@
         <!-- Logo et navigation pour PC (à gauche) -->
         <div class="flex items-center space-x-8">
             <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
-            <nav class="hidden lg:flex space-x-8">
-                <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">À propos</a>
-                <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Nos Services</a>
-                <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
+            <nav class="space-x-8">
+                <a href="#trailer-section" class="text-gray-600 font-semibold">À propos</a>
+                <a href="#services-section" class="text-gray-600 font-semibold">Nos Services</a>
+                <a href="contact.html" class="text-gray-600 font-semibold">Contact</a>
             </nav>
         </div>
         <!-- Menu burger pour mobile (à droite) -->
