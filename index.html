@@ -205,6 +205,13 @@
     .hover-zoom:hover {
         transform: scale(1.05); /* Zoom subtil */
     }
+        /* Empêcher le logo de bouger ou d'avoir des interactions */
+    .logo {
+        pointer-events: none; /* Désactiver toutes les interactions */
+        animation: none !important; /* Supprimer toute animation */
+        transform: none !important; /* Supprimer tout mouvement */
+        transition: none !important; /* Supprimer tout effet de transition */
+    }
     </style>
 </head>
 
@@ -214,7 +221,7 @@
     <header class="flex justify-between items-center py-4 px-8 bg-[#F3F1F1] shadow-md fade-in-up">
         <!-- Logo et navigation pour PC (à gauche) -->
         <div class="flex items-center space-x-8">
-            <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
+            <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 logo">
             <nav class="space-x-8">
                  <a href="#trailer-section" class="text-gray-600 font-semibold circle-button">À propos</a>
                  <a href="#services-section" class="text-gray-600 font-semibold circle-button">Nos Services</a>
