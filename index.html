@@ -111,6 +111,57 @@
         .show {
             display: flex !important;
         }
+            /* Ajout de transitions générales */
+    *, *::before, *::after {
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Animation au survol du bouton "Rejoindre le forum" */
+    .btn-large {
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-large:hover {
+        background-color: #001F3F;
+        color: white;
+        transform: scale(1.1); /* Agrandissement léger */
+    }
+
+    /* Animation pour les cartes */
+    .hover-bounce {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-bounce:hover {
+        transform: scale(1.05); /* Agrandissement léger */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre douce */
+    }
+
+    /* Animation pour les liens */
+    a {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+        color: #001F3F;
+        transform: translateY(-2px); /* Déplacement léger vers le haut */
+    }
+
+    /* Animation pour les sections */
+    section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
     </style>
 </head>
 
