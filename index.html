@@ -162,37 +162,41 @@
         opacity: 1;
         transform: translateY(0);
     }
+    /* Style pour restaurer les cercles autour des boutons en haut */
+    nav a {
+        display: inline-block;
+        padding: 12px 24px; /* Ajuste la taille des cercles */
+        border: 2px solid #001F3F; /* Cercle bleu */
+        border-radius: 9999px; /* Cercle parfait */
+        text-align: center;
+        transition: none !important; /* Pas de transition */
+        transform: none !important; /* Pas de mouvement */
+    }
+
+    nav a:hover {
+        color: inherit; /* Pas de changement de couleur */
+        transform: none; /* Pas de mouvement au survol */
+    }
+
     /* Animation légère pour le bouton "Rejoindre le forum" */
     @keyframes subtleBounce {
         0%, 100% {
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-3px); /* Mouvement subtil vers le haut */
+            transform: translateY(-3px); /* Mouvement subtil */
         }
     }
 
     .btn-bounce {
         animation: subtleBounce 3s infinite; /* Rebond toutes les 3 secondes */
-        transition: transform 0.3s ease; /* Transition fluide au survol */
+        transition: transform 0.3s ease-in-out; /* Transition fluide */
     }
 
     .btn-bounce:hover {
         animation: none; /* Arrêter l'animation au survol */
-        transform: scale(1.05); /* Agrandissement très léger */
+        transform: scale(1.05); /* Agrandissement subtil */
     }
-
-    /* Désactiver les animations des boutons en haut */
-    nav a {
-        transition: none !important; /* Supprime les transitions */
-        transform: none !important; /* Supprime tout mouvement */
-    }
-
-    nav a:hover {
-        color: inherit; /* Aucun changement de couleur au survol */
-        transform: none; /* Aucun mouvement au survol */
-    }
-
     /* Effet de zoom pour les cartes (dans le screen) */
     .hover-zoom {
         transition: transform 0.3s ease-in-out; /* Transition fluide */
@@ -212,10 +216,11 @@
         <div class="flex items-center space-x-8">
             <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
             <nav class="space-x-8">
-                <a href="#trailer-section" class="text-gray-600 font-semibold">À propos</a>
-                <a href="#services-section" class="text-gray-600 font-semibold">Nos Services</a>
-                <a href="contact.html" class="text-gray-600 font-semibold">Contact</a>
+                 <a href="#trailer-section" class="text-gray-600 font-semibold circle-button">À propos</a>
+                 <a href="#services-section" class="text-gray-600 font-semibold circle-button">Nos Services</a>
+                 <a href="contact.html" class="text-gray-600 font-semibold circle-button">Contact</a>
             </nav>
+
         </div>
         <!-- Menu burger pour mobile (à droite) -->
         <button id="burger-menu" class="lg:hidden text-gray-800 focus:outline-none">
