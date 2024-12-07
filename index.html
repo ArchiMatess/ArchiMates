@@ -162,27 +162,30 @@
         opacity: 1;
         transform: translateY(0);
     }
-        /* Définir l'animation bounce */
+       /* Définir l'animation de rebond */
     @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
             transform: translateY(0);
         }
         40% {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
         60% {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
     }
 
     /* Appliquer l'animation au bouton */
     .btn-bounce {
-        animation: bounce 2s infinite; /* Rebond toutes les 2 secondes */
+        display: inline-block;
+        animation: bounce 2s infinite; /* Animation de rebond toutes les 2 secondes */
+        transition: transform 0.3s ease; /* Transition pour un effet fluide */
     }
 
+    /* Au survol : arrêter le rebond et agrandir légèrement */
     .btn-bounce:hover {
-        animation: none; /* Arrêter le rebond lorsqu'on survole */
-        transform: scale(1.1); /* Agrandissement léger au survol */
+        animation: none; /* Arrêter l'animation au survol */
+        transform: scale(1.1); /* Agrandir légèrement */
     }
     </style>
 </head>
