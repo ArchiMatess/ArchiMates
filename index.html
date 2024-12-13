@@ -132,13 +132,15 @@
             display: none;
         }
 
-        /* Menu burger visible uniquement sur mobile */
         @media (max-width: 1024px) {
-            #burger-menu {
-                display: block;
-                margin-left: auto;
-            }
-        }
+    nav {
+        display: none !important; /* Cache complètement la navigation sur mobile */
+    }
+
+    #burger-menu {
+        display: block; /* Affiche uniquement le menu burger */
+    }
+}
     </style>
 </head>
 
