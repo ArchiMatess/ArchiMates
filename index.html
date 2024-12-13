@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="C'est un forum qui accompagne les étudiants et qui rassemble l’essentiel des ressources matérielles et immatérielles pour tes études d’architecture.">
-    <title>Archimates.fr - Forum pour étudiants en architecture</title>
+    <title>Archimates.fr</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -65,6 +64,37 @@
             transform: scale(1.05);
         }
 
+        /* Animation for "Rejoindre le forum" */
+        .spaced-button {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            animation: buttonBounce 1s ease infinite alternate;
+        }
+
+        @keyframes buttonBounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Excluding specific buttons from animation */
+        nav a {
+            transition: none;
+        }
+
+        /* Hover bounce for the cases in 'Pourquoi rejoindre Archimates' */
+        .hover-bounce {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hover-bounce:hover {
+            transform: scale(1.05);
+        }
+
         /* Style for grayed background */
         .gray-bg {
             background-color: #F3F1F1;
@@ -74,160 +104,40 @@
         .fade-gradient {
             background: linear-gradient(180deg, #F3F1F1 0%, #FEFCFC 100%);
         }
+/* Tab bar couleur */
+    header {
+        background-color: #FEFCFC;
+    }
 
-        /* Menu déroulant mobile caché par défaut */
-        #mobile-menu {
-            display: none;
-        }
-
-        /* Menu burger visible uniquement sur mobile */
-        @media (max-width: 1024px) {
-            #burger-menu {
-                display: block;
-                margin-left: auto;
-            }
-        }
-
-        /* Tab bar couleur */
-        header {
-            background-color: #FEFCFC;
-        }
-
-        /* Style pour entourer les boutons d'un cercle */
-        .circle-button {
-            display: inline-block;
-            padding: 12px 24px;
-            border: 2px solid #001F3F;
-            border-radius: 9999px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .circle-button:hover {
-            background-color: #001F3F;
-            color: white;
-        }
-
-        /* Style pour l'affichage du menu mobile lorsqu'il est ouvert */
-        .show {
-            display: flex !important;
-        }
-            /* Ajout de transitions générales */
-    *, *::before, *::after {
+    /* Style pour entourer les boutons d'un cercle */
+    .circle-button {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 2px solid #001F3F;
+        border-radius: 9999px; /* Cercle parfait */
         transition: all 0.3s ease-in-out;
     }
 
-    /* Animation pour les cartes */
-    .hover-bounce {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .circle-button:hover {
+        background-color: #001F3F;
+        color: white;
     }
-
-    .hover-bounce:hover {
-        transform: scale(1.05); /* Agrandissement léger */
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre douce */
-    }
-
-    /* Animation pour les liens */
-    a {
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    a:hover {
-        color: #001F3F;
-        transform: translateY(-2px); /* Déplacement léger vers le haut */
-    }
-
-    /* Animation pour les sections */
-    section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-    }
-
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    /* Style pour restaurer les cercles autour des boutons en haut */
-    nav a {
-        display: inline-block;
-        padding: 12px 24px; /* Ajuste la taille des cercles */
-        border: 2px solid #001F3F; /* Cercle bleu */
-        border-radius: 9999px; /* Cercle parfait */
-        text-align: center;
-        transition: none !important; /* Pas de transition */
-        transform: none !important; /* Pas de mouvement */
-    }
-
-    nav a:hover {
-        color: inherit; /* Pas de changement de couleur */
-        transform: none; /* Pas de mouvement au survol */
-    }
-    /* Effet de zoom pour les cartes (dans le screen) */
-    .hover-zoom {
-        transition: transform 0.3s ease-in-out; /* Transition fluide */
-    }
-
-    .hover-zoom:hover {
-        transform: scale(1.05); /* Zoom subtil */
-    }
-        /* Empêcher le logo de bouger ou d'avoir des interactions */
-    .logo {
-        pointer-events: none; /* Désactiver toutes les interactions */
-        animation: none !important; /* Supprimer toute animation */
-        transform: none !important; /* Supprimer tout mouvement */
-        transition: none !important; /* Supprimer tout effet de transition */
-    }
-    /* Cache les boutons en haut sur mobile */
-    @media (max-width: 1024px) {
-      nav {
-        display: none; /* Cache la navigation */
-      }
-    }
-@keyframes buttonBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px); /* Mouvement léger vers le haut */
-    }
-}
-
-.btn-bounce {
-    animation: buttonBounce 2s infinite ease-in-out; /* Animation rebond */
-}
-
     </style>
 </head>
 
 <body class="font-[Poppins] bg-[#FEFCFC] text-gray-800">
+<!-- Header (Tab Bar) -->
+<header class="flex justify-between items-center py-4 px-8 bg-[#F3F1F1] shadow-md fade-in-up">
+    <div class="flex items-center space-x-8">
+        <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 hover-bounce logo">
+        <nav class="space-x-8">
+            <a href="#trailer-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">À propos</a>
+            <a href="#services-section" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Nos Services</a>
+            <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
+        </nav>
+    </div>
+</header>
 
-    <!-- Header (Tab Bar) -->
-    <header class="flex justify-between items-center py-4 px-8 bg-[#F3F1F1] shadow-md fade-in-up">
-        <!-- Logo et navigation pour PC (à gauche) -->
-        <div class="flex items-center space-x-8">
-            <img src="https://i.imgur.com/oTXFyfs.png" alt="Archimates.fr Logo" class="h-28 logo">
-            <nav class="space-x-8">
-                 <a href="#trailer-section" class="text-gray-600 font-semibold circle-button">À propos</a>
-                 <a href="#services-section" class="text-gray-600 font-semibold circle-button">Nos Services</a>
-                 <a href="contact.html" class="text-gray-600 font-semibold circle-button">Contact</a>
-            </nav>
-
-        </div>
-        <!-- Menu burger pour mobile (à droite) -->
-        <button id="burger-menu" class="lg:hidden text-gray-800 focus:outline-none">
-            <i class="fas fa-bars fa-2x"></i>
-        </button>
-    </header>
-
-    <!-- Menu déroulant mobile -->
-    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6 lg:hidden">
-        <a href="#trailer-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">À propos</a>
-        <a href="#services-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Nos Services</a>
-        <a href="contact.html" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Contact</a>
-        <button id="close-menu" class="text-gray-800 focus:outline-none mt-4">
-            <i class="fas fa-times fa-2x"></i>
-        </button>
-    </nav>
     <!-- Main Hero Section -->
     <section class="py-12 px-8 bg-[#FEFCFC] fade-in-up section-bg">
         <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
@@ -235,16 +145,9 @@
                 <h1 class="text-4xl font-bold text-gray-900 leading-tight fade-in-up">Archimates : Le forum pour les étudiants en architecture</h1>
                 <p class="text-lg text-gray-600 mt-4 fade-in-delayed">C'est un forum qui accompagne les étudiants et qui rassemble l’essentiel des ressources matérielles et immatérielles pour tes études d’architecture. 📚</p>
 
-                <div class="spaced-button fade-in-delayed mt-8 mb-6">
-    <a href="https://discord.gg/zdMwRNzE" 
-   target="_blank" 
-   class="bg-[#001F3F] text-white py-4 px-10 rounded btn-large btn-bounce">
-   Rejoindre le forum
-</a>
-
-</div>
-
-
+                <div class="spaced-button fade-in-delayed">
+                    <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-4 px-10 rounded btn-large">Rejoindre le forum</a>
+                </div>
 
                 <div class="mt-6 fade-in-delayed">
                     <p class="text-gray-700 font-semibold">Plus de 1 000 étudiants en architecture ont rejoint Archimates</p>
@@ -278,15 +181,15 @@
     <!-- Statistics Section with smooth color transition -->
     <section class="py-12 px-8 text-center fade-gradient fade-in-up">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-lg mx-auto">
-            <div class="hover-zoom">
+            <div class="hover-bounce">
                 <p class="text-4xl font-bold text-gray-900">1 000+</p>
                 <p class="text-lg text-gray-600 mt-2">Membres actifs dans notre communauté</p>
             </div>
-            <div class="hover-zoom">
+            <div class="hover-bounce">
                 <p class="text-4xl font-bold text-gray-900">400+</p>
                 <p class="text-lg text-gray-600 mt-2">Ressources architecturales</p>
             </div>
-            <div class="hover-zoom">
+            <div class="hover-bounce">
                 <p class="text-4xl font-bold text-gray-900">12</p>
                 <p class="text-lg text-gray-600 mt-2">Recommandation d'école d'architecture</p>
             </div>
@@ -299,6 +202,7 @@
             <h2 class="text-[#001F3F] text-sm font-bold uppercase">---</h2>
             <h3 class="text-3xl font-bold mt-4">Pourquoi rejoindre Archimates ?</h3>
             <p class="text-lg text-gray-300 mt-4">Archimates est une communauté qui accompagne et répond à tous les besoins des passionné(e)s et des étudiant(e)s d'architecture :</p>
+            <p class="text-lg text-gray-300 mt-1">---</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
@@ -325,6 +229,10 @@
                 <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
                     <span class="emoji">💿</span>
                     <h4 class="text-xl font-bold mt-4">Logiciel</h4>
+                    <p class="text-gray-300 mt-2">Guide complet sur tout les logiciels de conception architectural. Avec des tutos, des tips, des conseils d’anciens élèves et des accès aux licences gratuites pour les étudiants.</p>
+                </div>
+                <div class="p-6 bg-[#132F45] border border-gray-500 rounded-lg hover-bounce fade-in-up">
+                
                     <p class="text-gray-300 mt-2">Guide sur tout les logiciels de conception architectural. Avec des tutos, des tips, des conseils d’anciens élèves et des accès aux licences gratuites pour les étudiants.</p>
                 </div>
             </div>
@@ -341,28 +249,8 @@
         <p>Archimates.fr © 2024. Tous droits réservés.</p>
     </footer>
 
-
-    <!-- JavaScript pour le menu burger -->
+    <!-- Smooth scrolling JavaScript with offset for "À propos" -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll("section");
-
-        const options = {
-            threshold: 0.1,
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        }, options);
-
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-    });
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -382,28 +270,6 @@
                         });
                     }
                 }
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const burgerMenu = document.getElementById("burger-menu");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const closeMenu = document.getElementById("close-menu");
-
-            // Ouverture du menu mobile
-            burgerMenu.addEventListener("click", function () {
-                mobileMenu.classList.toggle("show");
-            });
-
-            // Fermeture du menu mobile
-            closeMenu.addEventListener("click", function () {
-                mobileMenu.classList.remove("show");
-            });
-
-            // Option pour fermer le menu lorsqu'un lien est cliqué
-            mobileMenu.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", function () {
-                    mobileMenu.classList.remove("show");
-                });
             });
         });
     </script>
