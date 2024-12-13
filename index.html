@@ -218,25 +218,25 @@
         display: none; /* Cache la navigation */
       }
     }
-    /* Animation légère pour le bouton "Rejoindre le forum" */
-@keyframes subtleBounce {
+/* Animation subtile pour le bouton "Rejoindre le forum" */
+@keyframes bounce {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-5px); /* Mouvement subtil */
+        transform: translateY(-5px); /* Déplacement léger */
     }
 }
 
 .btn-bounce {
-    animation: subtleBounce 2.5s infinite; /* Animation toutes les 2.5 secondes */
-    transition: transform 0.3s ease-in-out; /* Transition fluide */
+    animation: bounce 2s infinite ease-in-out; /* Rebond subtil toutes les 2 secondes */
 }
 
 .btn-bounce:hover {
-    animation: none; /* Arrête l'animation au survol */
+    animation: none; /* Désactive l'animation au survol */
     transform: scale(1.05); /* Agrandissement subtil au survol */
 }
+
 
     </style>
 </head>
