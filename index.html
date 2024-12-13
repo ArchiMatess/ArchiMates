@@ -141,6 +141,13 @@
         display: block; /* Affiche uniquement le menu burger */
     }
 }
+                /* Empêcher le logo de bouger ou d'avoir des interactions */
+    .logo {
+        pointer-events: none; /* Désactiver toutes les interactions */
+        animation: none !important; /* Supprimer toute animation */
+        transform: none !important; /* Supprimer tout mouvement */
+        transition: none !important; /* Supprimer tout effet de transition */
+    }
     </style>
 </head>
 
