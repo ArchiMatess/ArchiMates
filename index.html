@@ -212,6 +212,32 @@
         transform: none !important; /* Supprimer tout mouvement */
         transition: none !important; /* Supprimer tout effet de transition */
     }
+    /* Cache les boutons en haut sur mobile */
+    @media (max-width: 1024px) {
+      nav {
+        display: none; /* Cache la navigation */
+      }
+    }
+    /* Animation légère pour le bouton "Rejoindre le forum" */
+@keyframes subtleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Mouvement subtil */
+    }
+}
+
+.btn-bounce {
+    animation: subtleBounce 2.5s infinite; /* Animation toutes les 2.5 secondes */
+    transition: transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+.btn-bounce:hover {
+    animation: none; /* Arrête l'animation au survol */
+    transform: scale(1.05); /* Agrandissement subtil au survol */
+}
+
     </style>
 </head>
 
