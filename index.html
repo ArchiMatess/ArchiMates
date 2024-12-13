@@ -122,6 +122,22 @@
         background-color: #001F3F;
         color: white;
     }
+    /* Style pour l'affichage du menu mobile lorsqu'il est ouvert */
+        .show {
+            display: flex !important;
+        }
+            /* Menu déroulant mobile caché par défaut */
+        #mobile-menu {
+            display: none;
+        }
+
+        /* Menu burger visible uniquement sur mobile */
+        @media (max-width: 1024px) {
+            #burger-menu {
+                display: block;
+                margin-left: auto;
+            }
+        }
     </style>
 </head>
 
@@ -136,7 +152,21 @@
             <a href="contact.html" class="text-gray-600 font-semibold transition-colors duration-300 circle-button">Contact</a>
         </nav>
     </div>
+    <!-- Menu burger pour mobile (à droite) -->
+        <button id="burger-menu" class="lg:hidden text-gray-800 focus:outline-none">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
 </header>
+
+    <!-- Menu déroulant mobile -->
+    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-6 lg:hidden">
+        <a href="#trailer-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">À propos</a>
+        <a href="#services-section" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Nos Services</a>
+        <a href="contact.html" class="text-gray-600 font-semibold text-xl transition-colors duration-300">Contact</a>
+        <button id="close-menu" class="text-gray-800 focus:outline-none mt-4">
+            <i class="fas fa-times fa-2x"></i>
+        </button>
+    </nav>
 
     <!-- Main Hero Section -->
     <section class="py-12 px-8 bg-[#FEFCFC] fade-in-up section-bg">
@@ -251,6 +281,47 @@
 
     <!-- Smooth scrolling JavaScript with offset for "À propos" -->
     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+
+        const options = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, options);
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    });
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerMenu = document.getElementById("burger-menu");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const closeMenu = document.getElementById("close-menu");
+
+            // Ouverture du menu mobile
+            burgerMenu.addEventListener("click", function () {
+                mobileMenu.classList.toggle("show");
+            });
+
+            // Fermeture du menu mobile
+            closeMenu.addEventListener("click", function () {
+                mobileMenu.classList.remove("show");
+            });
+
+            // Option pour fermer le menu lorsqu'un lien est cliqué
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("show");
+                });
+            });
+        });
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
