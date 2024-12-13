@@ -184,26 +184,15 @@
       }
     }
 /* Animation subtile pour le bouton "Rejoindre le forum" */
-@keyframes subtleBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px); /* Déplacement léger */
-    }
-}
+        @keyframes buttonBounce {
+            0% {
+                transform: translateY(0);
+            }
 
-.btn-bounce {
-    animation: subtleBounce 2s infinite; /* Rebond subtil toutes les 2 secondes */
-    transition: transform 0.3s ease-in-out; /* Transition fluide */
-}
-
-.btn-bounce:hover {
-    animation: none; /* Désactive l'animation au survol */
-    transform: scale(1.05); /* Agrandissement subtil au survol */
-}
-
-
+            100% {
+                transform: translateY(-5px);
+            }
+        }
 
     </style>
 </head>
@@ -245,10 +234,7 @@
                 <p class="text-lg text-gray-600 mt-4 fade-in-delayed">C'est un forum qui accompagne les étudiants et qui rassemble l’essentiel des ressources matérielles et immatérielles pour tes études d’architecture. 📚</p>
 
                 <div class="spaced-button fade-in-delayed mt-8 mb-6">
-    <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-4 px-10 rounded btn-large btn-bounce">
-    Rejoindre le forum
-    </a>
-
+    <a href="https://discord.gg/zdMwRNzE" target="_blank" class="bg-[#001F3F] text-white py-4 px-10 rounded btn-large">Rejoindre le forum</a>
 </div>
 
 
